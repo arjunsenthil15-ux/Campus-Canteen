@@ -26,6 +26,6 @@ import java.util.ArrayList;
                 controller.takeOrder(choice);
             }
         }
-        System.out.println("Thank you! Visit again.");
+        System.out.println("VAzhga VAlamudun , kanedkjbwjb:.");
     }
 }
