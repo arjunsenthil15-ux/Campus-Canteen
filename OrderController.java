@@ -23,16 +23,15 @@ public class OrderController {
     }
 
     public boolean isFinished(int choice) {
-        return choice != 4;
+        return choice == 4;
     }
 
     public void takeOrder(int choice) {
         System.out.print("Enter quantity: ");
         int quantity = scanner.nextInt();
-        MenuItem picked = menu.get(choice);
-        ArrayList<Order> orders = new ArrayList<Order>();
+        MenuItem picked = menu.get(choice-1);
         orders.add(new Order(picked, quantity));
-        System.out.println("Added: " + picked.getName() + " x " + quantity);
+        System.out.println("\nAdded: " + picked.getName() + " x " + quantity);
     }
 
     public double getGrandTotal() {
@@ -45,6 +44,6 @@ public class OrderController {
 
     public void printReceipt() {
         view.printReceipt(orders);
-        System.out.println("Grand Total: Rs." + (int) getGrandTotal());
+        System.out.println("Grand Total: Rs." + getGrandTotal());
     }
 }
